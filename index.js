@@ -39,8 +39,7 @@ app.post("/userEnquiry", async (req, res) => {
                 res.status(400).json({ error: "Invalid arguments" });
             }
         } else {
-            // Return 409 Conflict if the mobile number is already registered
-            res.status(409).json({ msg: "This number is already registered" });
+            res.status(400).json({ error: "This number is already registered" });
         }
     } catch (err) {
         console.error('Error in /userEnquiry:', err);
